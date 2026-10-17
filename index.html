@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7ff">
+  <title>Study Cards</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Study Cards home">
+      <span class="brand-icon" aria-hidden="true">✦</span>
+      Study Cards
+    </a>
+    <span id="status" class="status" role="status" aria-live="polite">
+      Loading decks…
+    </span>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">YOUR STUDY SPACE</p>
+      <h1>Learn a little. Remember a lot.</h1>
+      <p>Pick a deck and choose how you want to study.</p>
+    </section>
+
+    <section class="toolbar" aria-label="Deck controls">
+      <label class="deck-picker">
+        <span>Deck</span>
+        <select id="deckSelect" aria-label="Choose a deck">
+          <option value="">No decks loaded</option>
+        </select>
+      </label>
+
+      <div class="file-actions">
+        <label class="button button-secondary file-button">
+          Choose JSON
+          <input id="fileInput" type="file" accept=".json,application/json">
+        </label>
+        <button id="downloadButton" class="button button-secondary" type="button" disabled>
+          Download deck
+        </button>
+        <button id="refreshButton" class="button button-quiet" type="button">
+          Refresh
+        </button>
+      </div>
+    </section>
+
+    <nav class="mode-tabs" aria-label="Study mode">
+      <button class="mode-tab active" type="button" data-mode="overview" aria-pressed="true">
+        Overview
+      </button>
+      <button class="mode-tab" type="button" data-mode="flashcard" aria-pressed="false">
+        Flashcards
+      </button>
+      <button class="mode-tab" type="button" data-mode="multiple" aria-pressed="false">
+        Multiple choice
+      </button>
+    </nav>
+
+    <section id="studyArea" class="study-area" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    Add JSON decks to the configured GitHub folder, or choose one from your device.
+  </footer>
+</body>
+</html>
